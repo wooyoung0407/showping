@@ -1,28 +1,25 @@
 package com.example.book.product.entity;
 
+import com.example.book.base.entity.BaseEntity;
 import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
 import lombok.Getter;
 import lombok.Setter;
-import org.springframework.data.annotation.CreatedDate;
-import org.springframework.data.annotation.LastModifiedDate;
-
-import java.time.LocalDateTime;
-
-import static jakarta.persistence.GenerationType.IDENTITY;
 
 @Entity
 @Setter
 @Getter
-public class Product {
-    @Id
-    @GeneratedValue(strategy = IDENTITY)
-    private long id;
+public class Product extends BaseEntity {
+
+    //마켓아이디
+    private int marketId;
+
     private String name;
+    //설명
+    private String description;
+
     private int price;
-    @CreatedDate
-    private LocalDateTime createDate;
-    @LastModifiedDate
-    private LocalDateTime modifyDate;
+    //추천
+    private int hit_count;
+    //활성여부
+    private String isActive;
 }

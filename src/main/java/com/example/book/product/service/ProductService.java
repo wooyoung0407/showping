@@ -18,7 +18,7 @@ public class ProductService {
         Product p = new Product();
         p.setName(name);
         p.setPrice(price);
-        p.setCreateDate(LocalDateTime.now());
+//        p.setCreateDate(LocalDateTime.now());
         this.productRepository.save(p);
     }
 
